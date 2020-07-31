@@ -1,0 +1,247 @@
+
+Routes!
+*******
+
++----------------------+-----------------------------------------------+-------------------------------------+
+| Resource             | Operation                                     | Description                         |
+|======================|===============================================|=====================================|
+| Add Question         | POST /questions/add                           | Add a Question                      |
++----------------------+-----------------------------------------------+-------------------------------------+
+| Add Sentence         | POST /sentences/add                           | Add a sentence                      |
++----------------------+-----------------------------------------------+-------------------------------------+
+| Experiment           | GET /experiment                               | Get Experiment.html                 |
++----------------------+-----------------------------------------------+-------------------------------------+
+| Feedback             | GET /feedback                                 | Get Feedback.html                   |
++----------------------+-----------------------------------------------+-------------------------------------+
+| Home                 | GET /introduction                             | Get Introduction.html               |
++----------------------+-----------------------------------------------+-------------------------------------+
+|                      | GET /                                         |                                     |
++----------------------+-----------------------------------------------+-------------------------------------+
+| Objective            | GET /objective                                | Get Objective.html                  |
++----------------------+-----------------------------------------------+-------------------------------------+
+| Procedure            | GET /procedure                                | Get Procedure.html                  |
++----------------------+-----------------------------------------------+-------------------------------------+
+| Q_Add                | GET /q_add                                    | Add Questions page                  |
++----------------------+-----------------------------------------------+-------------------------------------+
+| Question_Delete      | GET /questions/delete                         | Delete a Question                   |
++----------------------+-----------------------------------------------+-------------------------------------+
+| Question_get         | GET /questions/get                            | Get Question of a one Language      |
++----------------------+-----------------------------------------------+-------------------------------------+
+| Questions_get        | GET /questions/                               | Get All Questiones                  |
++----------------------+-----------------------------------------------+-------------------------------------+
+| Quiz                 | GET /quiz                                     | Get Quiz.html                       |
++----------------------+-----------------------------------------------+-------------------------------------+
+| S_Add                | GET /s_add                                    | Add Sentences page                  |
++----------------------+-----------------------------------------------+-------------------------------------+
+| Sentence_Delete      | GET /sentences/delete                         | Delete a Sentence                   |
++----------------------+-----------------------------------------------+-------------------------------------+
+| Sentence_get         | GET /sentences/get                            | Get A Random Sentence               |
++----------------------+-----------------------------------------------+-------------------------------------+
+| Sentences_get        | GET /sentences/                               | Get All Sentences                   |
++----------------------+-----------------------------------------------+-------------------------------------+
+| Theory               | GET /theory                                   | Get Theory.html                     |
++----------------------+-----------------------------------------------+-------------------------------------+
+
+
+Api details!
+============
+
+GET /sentences/delete
+
+   Deletes a sentence of given ID.
+
+   Query Parameters:
+      * **id** -- (int) ID of the sentence to delete
+
+   **Returns**
+      JSON object
+         The object contains:
+            bool
+               success = true
+
+            Object
+               Deleted Sentence
+
+GET /questions/delete
+
+   Deletes a Question of given ID.
+
+   Query Parameters:
+      * **id** -- (int) ID of the question to delete
+
+   **Returns**
+      JSON object
+         The object contains:
+            bool
+               success = true
+
+            object
+               Deleted Question
+
+POST /sentences/add
+
+   Adds a new Sentence to the table.
+
+   Form Parameters:
+      * **Words** -- (list) Contains the words of the sentence
+
+      * **Vars** -- (list) Contains the variations of the sentence
+
+      * **Var_type** -- (list) Contains the types of all the
+        variations
+
+      * **Lang** -- (string) Language of the sentence
+
+   **Returns**
+      JSON object
+         The object contains:
+            bool
+               success = true
+
+            Object
+               Sentence added
+
+GET /sentences/get
+
+   Fetches a random sentence for the experiment.
+
+   Query Parameters:
+      * **lang** -- (string) Language of the sentence to be sent
+
+   **Returns**
+      JSON object
+         The object contains:
+            bool
+               success = true
+
+            Object
+               A sentence
+
+POST /questions/add
+
+   Adds a new Question to the table.
+
+   Form Parameters:
+      * **Question** -- (string) Text of the question
+
+      * **Answer** -- (int) Correct Option number
+
+      * **Language** -- (string) Language of the question
+
+      * **Option[1-4]** -- (strings) Options of the question
+
+   **Returns**
+      JSON object
+         The object contains:
+            bool
+               success = true
+
+            object
+               Question added
+
+GET /questions/get
+
+   Fetches all questions of a particular language.
+
+   Query Parameters:
+      * **lang** -- (string) Language of the sentences to fetch
+
+   **Returns**
+      JSON object
+         The object contains:
+            bool
+               success = true
+
+            list
+               Objects of every question with given language
+
+GET /introduction
+
+GET /
+
+   Introduction.html
+
+   Redirects to the homepage of the experiment - Introdution.html ..
+   :quickref: Home; Get Introduction.html
+
+GET /experiment
+
+   Experiment.html
+
+   Redirects to the experiment page - Experiment.html .. :quickref:
+   Experiment; Get Experiment.html
+
+GET /sentences/
+
+   Fetches all sentences from the database.
+
+   **Returns**
+      JSON object
+         The object contains:
+            bool
+               success = true
+
+            list
+               List contains objects of every sentence in the database
+
+GET /questions/
+
+   Fetches all question from the database.
+
+   **Returns**
+      JSON object
+         The object contains:
+            bool
+               success = true
+
+            list
+               Objects of every question in the database
+
+GET /procedure
+
+   Procedure.html
+
+   Redirects to the page explaining the procedure - Procedure.html ..
+   :quickref: Procedure; Get Procedure.html
+
+GET /objective
+
+   Objective.html
+
+   Redirects to the page describing the objective of the experiment -
+   Objective.html .. :quickref: Objective; Get Objective.html
+
+GET /feedback
+
+   Feedback.html
+
+   Redirects to the feedback page - Feedback.html .. :quickref:
+   Feedback; Get Feedback.html
+
+GET /theory
+
+   Theory.html
+
+   Redirects to the page containing the theory - Theory.html ..
+   :quickref: Theory; Get Theory.html
+
+GET /q_add
+
+   Quiz_add.html
+
+   Redirects to page to add Questions to the database - Quiz_add.html
+   .. :quickref: Q_Add; Add Questions page
+
+GET /s_add
+
+   Sentence_add.html
+
+   Redirects to the page to add Sentences to the database -
+   Sentence_add.html .. :quickref: S_Add; Add Sentences page
+
+GET /quiz
+
+   Quiz.html
+
+   Redirects to the quiz page - Quiz.html .. :quickref: Quiz; Get
+   Quiz.html

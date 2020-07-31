@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title> Add a new Sentence</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+</head>
+
+<body onload="res()">
+    <div class="container col-lg-7">
+        <h1>Add a new Sentence:</h1>
+        <form class="form-horizontal" name="add_sent" action="" method="POST" id="add_sent">
+            <label><b>Words:</b></label>
+            <div class="form-group">
+                <div class="col-sm-5 words">
+                </div>
+            </div>
+            <label><b>Variations:</b></label>
+            <div class="form-group">
+                <div class="col-sm-5 variations">
+                </div>
+            </div>
+            <label for="Language"><b>Language:</b></label>
+            <div class="form-group">
+                <div class="col-sm-5">
+                    <select class="form-control" name="Language" id="Language" required>
+                        <option value="">Select Language</option>
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                    </select>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-default" value="Submit">
+        </form>
+    </div>
+    <div class="container col-lg-5">
+        <div class="row container-fluid">
+            <h1>OR...</h1>
+            <h2>Enter ID of the Sentence to delete:</h2>
+            <form class="form-horizontal" name="del_sent" action="" method="GET" id="del_sent">
+                <div class="form-group">
+                    <div class="col-sm-5">
+                        <label for="ID"><b>ID to delete:</b></label>
+                        <input type="number" class="form-control" name="ID" id="ID"
+                            placeholder="Enter the ID of the Sentence" min="0" required>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-default" value="Delete">
+            </form>
+        </div>
+        <div class="row container-fluid">
+            <h1>OR...</h1>
+            <h2>Click <a href="http://0.0.0.0:5000/sentences">here</a> to view all sentences!</h2>
+        </div>
+    </div>
+</body>
+<script src="../static/js/Sentences_add.js"></script>
+
+</html>
